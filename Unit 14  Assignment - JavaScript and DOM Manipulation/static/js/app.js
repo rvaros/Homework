@@ -19,8 +19,8 @@ var submit = d3.select("#submit");
 
 submit.on("click",function() {
   d3.event.preventDefault();
-  var inputElement = d3.select("#date");
-  var inputValue = inputElement.property("value");
+  var inputValue = d3.select("#date");
+  var inputValue = inputValue.property("value");
   console.log(inputValue);
   console.log(alien);
   var filteredData = alien.filter(alien => alien.datetime === inputValue);
