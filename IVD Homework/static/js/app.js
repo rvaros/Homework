@@ -17,7 +17,7 @@ function buildMetadata(sample) {
     
     Object.entries(data).forEach(([key,value]) => {
       selectPanel.append("h5").text(`${key}: ${value}`);
-    })
+    });
     // BONUS: Build the Gauge Chart
     // buildGauge(data.WFREQ);
   });
