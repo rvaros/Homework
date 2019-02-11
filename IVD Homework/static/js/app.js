@@ -3,16 +3,19 @@ function buildMetadata(sample) {
   // @TODO: Complete the following function that builds the metadata panel
 
   // Use `d3.json` to fetch the metadata for a sample
-  d3.json(`/metadata/${sample}`).then((data)=> {
+  d3.json(`/metadata/${sample}`).then((data) => {
     
     // Use d3 to select the panel with id of `#sample-metadata`
     var selectPanel = d3.select("#sample-metadata");
+    
     // Use `.html("") to clear any existing metadata
     selectPanel.html("");
+    
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
-    Object.defineProperties(data).forEach(([key,value]) => {
+    
+    Object.entries(data).forEach(([key,value]) => {
       selectPanel.append("h5").text(`${key}: ${value}`);
     })
     // BONUS: Build the Gauge Chart
