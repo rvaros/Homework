@@ -23,7 +23,7 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
 
   // @TODO: Use `d3.json` to fetch the sample data for the plots
-  d3.json(`/sample/${sample}`), then((data) => {
+  d3.json(`/sample/${sample}`).then((data) => {
     const otu_ids = data.otu_ids;
     const sample_values = data.sample_values;
     const otu_labels = data.otu_labels;
